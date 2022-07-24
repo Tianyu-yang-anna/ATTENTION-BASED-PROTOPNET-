@@ -12,7 +12,7 @@ from receptive_field import compute_proto_layer_rf_info_v2
 
 sys.path.insert(1, './Deformable-Convolution-V2-PyTorch')
 
-from functions.norm_preserve_deform_conv_func import NormPreserveDeformConvFunction
+# from functions.norm_preserve_deform_conv_func import NormPreserveDeformConvFunction
 
 base_architecture_to_features = {'resnet18': resnet18_features,
                                  'resnet34': resnet34_features,
@@ -54,6 +54,27 @@ class PPNet(nn.Module):
         self.prototype_dilation = (prototype_dilation, prototype_dilation)
         self.prototype_padding = (1, 1)
         self.topk_k = topk_k
+
+
+        # Query and Value Kernels
+        self.query = nn.Parameter(
+            data=torch.randn(
+                self.prototype_shape[1],
+                self.prototype_shape[1], 
+                self.prototype_shape[2],
+                self.prototype_shape[3]
+            ), 
+            requires_grad=True, 
+        )
+        self.value = nn.Parameter(
+            data=torch.randn(
+                self.prototype_shape[1],
+                self.prototype_shape[1], 
+                self.prototype_shape[2],
+                self.prototype_shape[3]
+            ), 
+            requires_grad=True, 
+        )
 
         '''
         Here we are initializing the class identities of the prototypes
@@ -177,12 +198,35 @@ class PPNet(nn.Module):
         x = self.add_on_layers(x_feat)
         return x
 
+    def normalize_features(self, features):
+
+        input_vector_length = self.input_vector_length
+        
+        normalizing_factor = (self.prototype_shape[-2] * self.prototype_shape[-1])**0.5
+
+        # Append an additional channel of value epsilon to prevent 0 vector
+        epsilon_channel_features = torch.ones(features.shape[0], self.n_eps_channels, features.shape[2], features.shape[3]) * self.epsilon_val
+        epsilon_channel_features = epsilon_channel_features.cuda()
+        epsilon_channel_features.requires_grad = False
+        features = torch.cat((features, epsilon_channel_features), -3)
+        # Normalize each 1 features 1 features latent piece to size s=64
+        features_length = torch.sqrt(torch.sum(torch.square(features), dim=-3) + self.epsilon_val)
+        features_length = features_length.view(features_length.size()[0], 1, features_length.size()[1], features_length.size()[2])
+        features_normalized = input_vector_length * features / features_length 
+        features_normalized = features_normalized / normalizing_factor
+        
+        return features_normalized
+
+
     def cos_activation(self, x, is_train=True, 
                         prototypes_of_wrong_class=None):
         '''
         Takes convolutional features and gives arc distance as in
         https://arxiv.org/pdf/1801.07698.pdf
         '''
+        x_query = F.conv2d(input=x, weight=self.query)
+        x_value = F.conv2d(input=x, weight=self.value)
+
         input_vector_length = self.input_vector_length
         prototype_dilation = self.prototype_dilation
         '''
@@ -194,15 +238,8 @@ class PPNet(nn.Module):
         normalizing_factor = (self.prototype_shape[-2] * self.prototype_shape[-1])**0.5
 
         # Append an additional channel of value epsilon to prevent 0 vector
-        epsilon_channel_x = torch.ones(x.shape[0], self.n_eps_channels, x.shape[2], x.shape[3]) * self.epsilon_val
-        epsilon_channel_x = epsilon_channel_x.cuda()
-        epsilon_channel_x.requires_grad = False
-        x = torch.cat((x, epsilon_channel_x), -3)
-        # Normalize each 1 x 1 x latent piece to size s=64
-        x_length = torch.sqrt(torch.sum(torch.square(x), dim=-3) + self.epsilon_val)
-        x_length = x_length.view(x_length.size()[0], 1, x_length.size()[1], x_length.size()[2])
-        x_normalized = input_vector_length * x / x_length 
-        x_normalized = x_normalized / normalizing_factor
+        x_query_normalized = self.normalize_features(x_query)
+        x_value_normalized = self.normalize_features(x_value)
 
         # Similarly, append an additional channel of value epsilon to prototypes
         epsilon_channel_p = torch.ones(self.prototype_shape[0], self.n_eps_channels, self.prototype_shape[2], self.prototype_shape[3]) * self.epsilon_val
@@ -220,10 +257,10 @@ class PPNet(nn.Module):
         normalized_prototypes = normalized_prototypes / normalizing_factor
 
         # Compute offsets for this input
-        offset = self.conv_offset(x_normalized)
+        offset = self.conv_offset(x_value_normalized)
 
         if self.using_deform:
-            activations_dot = NormPreserveDeformConvFunction.apply(x_normalized, offset, 
+            activations_dot = NormPreserveDeformConvFunction.apply(x_value_normalized, offset, 
                                                                 normalized_prototypes, 
                                                                 torch.zeros(self.prototype_shape[0]).cuda(), #bias
                                                                 (1, 1), #stride
@@ -234,9 +271,17 @@ class PPNet(nn.Module):
                                                                 1, #im2col_step
                                                                 True) #zero_padding
         else:
-            activations_dot = F.conv2d(x_normalized, normalized_prototypes)
+            activations_dot = F.conv2d(x_query_normalized, normalized_prototypes)
+            activations_dot = torch.mean(activations_dot, 1)
+            activations_dot = activations_dot.view(activations_dot.shape[0], 1, activations_dot.shape[1], activations_dot.shape[2])
+            # mask
+            activations_dot = F.normalize(activations_dot, p=2.0, dim=1, eps=1e-12, out=None)
+            #aggr_x_nomorlized is weighted aggr query feature map
+            aggr_x_nomorlized = activations_dot * x_value_normalized
+            activations_dot = F.conv2d(aggr_x_nomorlized, normalized_prototypes)
 
-        marginless_activations = activations_dot / (input_vector_length * 1.01)
+
+        marginless_activations = activations_dot / (input_vector_length * 1.01) 
         if self.m == None or not is_train or prototypes_of_wrong_class == None:
             # If no margin is used
             activations = marginless_activations

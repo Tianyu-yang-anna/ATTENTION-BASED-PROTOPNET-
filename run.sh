@@ -1,8 +1,8 @@
-python3 main.py -gpuid='0, 1' \
+python3 main.py -gpuid='0,1,2,3' \
                     -m=0.1 \
                     -last_layer_fixed=True \
                     -subtractive_margin=True \
-                    -using_deform=True \
+                    -using_deform=False \
                     -topk_k=1 \
                     -num_prototypes=1200 \
                     -incorrect_class_connection=-0.5 \

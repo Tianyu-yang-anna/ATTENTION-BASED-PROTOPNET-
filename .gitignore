@@ -1,0 +1,8 @@
+# dataset 
+datasets/
+
+# pyc files
+*.pyc
+
+# model files 
+*.pth

@@ -18,11 +18,13 @@ train_dir = data_path + 'train/'
 # Full set: train & test
 test_dir = data_path + 'test/'
 train_push_dir = data_path + 'train/'
-train_batch_size = 80
-test_batch_size = 100
+train_batch_size =80
+test_batch_size = 80
 train_push_batch_size = 75
 
 joint_optimizer_lrs = {'features': 1e-4,
+                       'query':3e-3, 
+                       'value':3e-3, 
                        'add_on_layers': 3e-3,
                        'prototype_vectors': 3e-3,
                        'conv_offset': 1e-4,
@@ -30,9 +32,13 @@ joint_optimizer_lrs = {'features': 1e-4,
 joint_lr_step_size = 5
 
 warm_optimizer_lrs = {'add_on_layers': 3e-3,
+                      'query':3e-3, 
+                      'value':3e-3, 
                       'prototype_vectors': 3e-3}
 
 warm_pre_offset_optimizer_lrs = {'add_on_layers': 3e-3,
+                      'query':3e-3, 
+                      'value':3e-3, 
                       'prototype_vectors': 3e-3,
                       'features': 1e-4}
 

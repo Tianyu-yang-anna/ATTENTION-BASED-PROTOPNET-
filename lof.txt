@@ -1,0 +1,913 @@
+---- USING DEFORMATION:  False
+Margin set to:  0.1
+last_layer_fixed set to: True
+subtractive_margin set to: True
+topk_k set to: 1
+num_prototypes set to: 1200
+incorrect_class_connection: -0.5
+deformable_conv_hidden_channels: 128
+Random seed:  1
+0,1,2,3
+Add on layers type:  upsample
+200 classes
+Using online augmentation
+training set size: 5994
+push set size: 5994
+test set size: 5794
+batch size: 40
+prototype_shape is actually:  (1200, 2048, 1, 1)
+joint_optimizer_lrs: 
+{'features': 0.0001, 'add_on_layers': 0.003, 'prototype_vectors': 0.003, 'conv_offset': 0.0001, 'joint_last_layer_lr': 1e-05}
+warm_optimizer_lrs: 
+{'add_on_layers': 0.003, 'prototype_vectors': 0.003}
+start training
+epoch: 	0
+	warm
+	train
+	time: 	34.202608585357666
+	cross ent: 	5.769409186045329
+	cluster: 	0.547543531258901
+	separation:	0.6351332326730093
+	avg separation:	0.5858514742056529
+	accu: 		34.73473473473474%
+	orthogonality loss:	685.3877392578125
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	68.53877392578126
+	max offset: 	0.0
+	test
+	time: 	15.429317951202393
+	cross ent: 	4.640841311421887
+	cluster: 	0.532522382921186
+	separation:	0.5243015474286573
+	avg separation:	0.4404733581789609
+	accu: 		71.72937521574042%
+	orthogonality loss:	325.4742126464844
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	1
+	warm
+	train
+	time: 	23.746315956115723
+	cross ent: 	5.1252818552653
+	cluster: 	0.60282377243042
+	separation:	0.6675241911411285
+	avg separation:	0.5579296207427978
+	accu: 		69.38605271938604%
+	orthogonality loss:	608.8936999511719
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	60.88936999511719
+	max offset: 	0.0
+	test
+	time: 	14.054669380187988
+	cross ent: 	3.954524036111503
+	cluster: 	0.5982472043612908
+	separation:	0.572047542909096
+	avg separation:	0.4134451520854029
+	accu: 		77.20055229547808%
+	orthogonality loss:	281.5184326171875
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	2
+	warm
+	train
+	time: 	23.974037647247314
+	cross ent: 	4.481327781677246
+	cluster: 	0.6584465714295705
+	separation:	0.702606471379598
+	avg separation:	0.5214629127581915
+	accu: 		76.84351017684351%
+	orthogonality loss:	514.0645739746094
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	51.40645739746094
+	max offset: 	0.0
+	test
+	time: 	14.863184452056885
+	cross ent: 	3.302278156938224
+	cluster: 	0.6569435699232693
+	separation:	0.6131295952303656
+	avg separation:	0.375768574661222
+	accu: 		79.20262340352089%
+	orthogonality loss:	232.6024627685547
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	3
+	warm
+	train
+	time: 	23.131638050079346
+	cross ent: 	3.9134890747070314
+	cluster: 	0.70341459552447
+	separation:	0.7308340179920196
+	avg separation:	0.4790434042612712
+	accu: 		77.34401067734402%
+	orthogonality loss:	421.4429951985677
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	42.14429951985677
+	max offset: 	0.0
+	test
+	time: 	14.292517900466919
+	cross ent: 	2.7546749937123267
+	cluster: 	0.7035450555127243
+	separation:	0.6449503323127483
+	avg separation:	0.33371016434554396
+	accu: 		80.18639972385226%
+	orthogonality loss:	190.6114501953125
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	4
+	warm
+	train
+	time: 	23.583290576934814
+	cross ent: 	3.467160766919454
+	cluster: 	0.735106217066447
+	separation:	0.7481464970111847
+	avg separation:	0.43670787632465363
+	accu: 		78.4617951284618%
+	orthogonality loss:	350.1864719645182
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	35.01864719645182
+	max offset: 	0.0
+	test
+	time: 	13.857593774795532
+	cross ent: 	2.36039459088753
+	cluster: 	0.734333109239052
+	separation:	0.6638494010629326
+	avg separation:	0.2943538021424721
+	accu: 		81.2909906800138%
+	orthogonality loss:	161.74658203125
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	5
+	warm pre offset
+	train
+	time: 	34.52966642379761
+	cross ent: 	2.6127653821309407
+	cluster: 	0.7970353456338247
+	separation:	0.7861679951349895
+	avg separation:	0.36765542844931287
+	accu: 		77.79446112779446%
+	orthogonality loss:	289.31730305989583
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	28.931730305989586
+	max offset: 	0.0
+	test
+	time: 	14.021432399749756
+	cross ent: 	1.4648728812563008
+	cluster: 	0.824840169528435
+	separation:	0.7193612661854974
+	avg separation:	0.22889018033085198
+	accu: 		80.721435968243%
+	orthogonality loss:	137.5299530029297
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	6
+	warm pre offset
+	train
+	time: 	34.447202920913696
+	cross ent: 	1.8335249265034994
+	cluster: 	0.84984414935112
+	separation:	0.7890680746237437
+	avg separation:	0.30568451364835103
+	accu: 		82.71604938271605%
+	orthogonality loss:	265.97407491048176
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	26.59740749104818
+	max offset: 	0.0
+	test
+	time: 	14.857391357421875
+	cross ent: 	1.0996425552614804
+	cluster: 	0.8538795524630053
+	separation:	0.7095151492233934
+	avg separation:	0.17644380135782833
+	accu: 		82.15395236451502%
+	orthogonality loss:	128.930419921875
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	7
+	warm pre offset
+	train
+	time: 	33.6514036655426
+	cross ent: 	1.3901546200116475
+	cluster: 	0.8769850814342499
+	separation:	0.7703172636032104
+	avg separation:	0.2603693773349126
+	accu: 		85.20186853520187%
+	orthogonality loss:	251.11818450927734
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	25.111818450927736
+	max offset: 	0.0
+	test
+	time: 	13.869115352630615
+	cross ent: 	0.9111221473792503
+	cluster: 	0.8707216464239975
+	separation:	0.6891308498793635
+	avg separation:	0.14250529172091647
+	accu: 		82.24024853296513%
+	orthogonality loss:	122.41646575927734
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	8
+	warm pre offset
+	train
+	time: 	34.162636518478394
+	cross ent: 	1.1330450701713561
+	cluster: 	0.8922981683413188
+	separation:	0.7455626221497854
+	avg separation:	0.23091225097576776
+	accu: 		87.02035368702036%
+	orthogonality loss:	239.15207529703775
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	23.91520752970378
+	max offset: 	0.0
+	test
+	time: 	14.89150619506836
+	cross ent: 	0.8259462955696829
+	cluster: 	0.8775729721990125
+	separation:	0.6705557817015154
+	avg separation:	0.1197553953990854
+	accu: 		82.3610631687953%
+	orthogonality loss:	116.98745727539062
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	9
+	warm pre offset
+	train
+	time: 	33.49569249153137
+	cross ent: 	0.9438510445753733
+	cluster: 	0.9049847892920176
+	separation:	0.7186988484859467
+	avg separation:	0.2100738227367401
+	accu: 		88.52185518852185%
+	orthogonality loss:	229.29593770345053
+	l1: 		120600.0
+	avg l2: 		0.0
+	avg l2 with weight: 		0.0
+	orthogonality loss with weight:	22.929593770345054
+	max offset: 	0.0
+	test
+	time: 	13.255122661590576
+	cross ent: 	0.8049281840694362
+	cluster: 	0.8759464611267221
+	separation:	0.6470382079995912
+	avg separation:	0.10442276979828703
+	accu: 		81.27373144632378%
+	orthogonality loss:	112.52073669433594
+	l1: 		120600.0
+	avg l2: 		0.0
+	max offset: 	0.0
+	above 70.00%
+epoch: 	10
+	joint
+	train
+/home/tianyu/anaconda3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+	time: 	34.03838109970093
+	Using ortho loss
+	cross ent: 	0.9246290123462677
+	cluster: 	0.8780470112959544
+	separation:	0.6465103622277578
+	avg separation:	0.17589865575234095
+	accu: 		89.77310643977312%
+	orthogonality loss:	162.69720545450846
+	l1: 		120600.0
+	avg l2: 		6.520380702568218e-05
+	avg l2 with weight: 		5.2163049986120313e-05
+	orthogonality loss with weight:	16.269720545450845
+	max offset: 	2.223276624135906e-06
+	test
+	time: 	14.138097524642944
+	cross ent: 	0.9751236777881096
+	cluster: 	0.7957324149279759
+	separation:	0.529497340835374
+	avg separation:	0.060882373552384045
+	accu: 		81.53261995167415%
+	orthogonality loss:	58.97273635864258
+	l1: 		120600.0
+	avg l2: 		0.00010276533430442214
+	max offset: 	2.218307372459094e-06
+	above 70.00%
+epoch: 	11
+	joint
+	train
+	time: 	34.050501346588135
+	Using ortho loss
+	cross ent: 	1.4753556180000305
+	cluster: 	0.7813915153344472
+	separation:	0.5320220416784287
+	avg separation:	0.14541054606437684
+	accu: 		90.92425759092426%
+	orthogonality loss:	81.17666669209798
+	l1: 		120600.0
+	avg l2: 		6.228328857105225e-05
+	avg l2 with weight: 		4.9826627218862996e-05
+	orthogonality loss with weight:	8.117666669209799
+	max offset: 	2.307131126144668e-06
+	test
+	time: 	13.961913108825684
+	cross ent: 	1.5067487605686845
+	cluster: 	0.690798165469334
+	separation:	0.4215487920004746
+	avg separation:	0.03943291081693666
+	accu: 		81.60165688643424%
+	orthogonality loss:	25.63828468322754
+	l1: 		120600.0
+	avg l2: 		9.503212640993297e-05
+	max offset: 	2.1459709387272596e-06
+	above 70.00%
+epoch: 	12
+	joint
+	train
+	time: 	34.51914119720459
+	Using ortho loss
+	cross ent: 	2.1224653267860414
+	cluster: 	0.6935508128007253
+	separation:	0.4387731866041819
+	avg separation:	0.12837974091370902
+	accu: 		92.45912579245913%
+	orthogonality loss:	35.743477516174316
+	l1: 		120600.0
+	avg l2: 		5.959702320978977e-05
+	avg l2 with weight: 		4.7677618567831814e-05
+	orthogonality loss with weight:	3.574347751617432
+	max offset: 	2.5340648335259175e-06
+	test
+	time: 	14.518149852752686
+	cross ent: 	1.8946886329815305
+	cluster: 	0.6185404154761084
+	separation:	0.3559299974605955
+	avg separation:	0.027888250183956378
+	accu: 		82.32654470141526%
+	orthogonality loss:	12.131406784057617
+	l1: 		120600.0
+	avg l2: 		9.360031981486827e-05
+	max offset: 	2.3216721274366137e-06
+	above 70.00%
+epoch: 	13
+	joint
+	train
+	time: 	34.46240758895874
+	Using ortho loss
+	cross ent: 	2.4858590857187908
+	cluster: 	0.6344786747296651
+	separation:	0.39354744772116346
+	avg separation:	0.11932756314675014
+	accu: 		92.8928928928929%
+	orthogonality loss:	18.251331170399983
+	l1: 		120600.0
+	avg l2: 		5.939111360930838e-05
+	avg l2 with weight: 		4.75128908874467e-05
+	orthogonality loss with weight:	1.8251331170399985
+	max offset: 	2.3401919406751404e-06
+	test
+	time: 	14.562143325805664
+	cross ent: 	2.1249284209876227
+	cluster: 	0.575147707914484
+	separation:	0.3265710149345727
+	avg separation:	0.02289769172283082
+	accu: 		81.91232309285468%
+	orthogonality loss:	6.790724754333496
+	l1: 		120600.0
+	avg l2: 		9.591394336894155e-05
+	max offset: 	2.366950411669677e-06
+	above 70.00%
+epoch: 	14
+	joint
+	train
+	time: 	34.05165934562683
+	Using ortho loss
+	cross ent: 	2.539734706878662
+	cluster: 	0.6218245875835419
+	separation:	0.36165614406267804
+	avg separation:	0.11516325468818346
+	accu: 		95.17851184517852%
+	orthogonality loss:	12.939453881581624
+	l1: 		120600.0
+	avg l2: 		5.842484824825078e-05
+	avg l2 with weight: 		4.6739878598600626e-05
+	orthogonality loss with weight:	1.2939453881581624
+	max offset: 	2.2450374217442004e-06
+	test
+	time: 	13.83627200126648
+	cross ent: 	2.0866557709101974
+	cluster: 	0.5769141624713766
+	separation:	0.30030781518796396
+	avg separation:	0.020706287456740594
+	accu: 		84.39765274421815%
+	orthogonality loss:	6.158919811248779
+	l1: 		120600.0
+	avg l2: 		9.11859970074147e-05
+	max offset: 	2.278986357850954e-06
+	above 70.00%
+epoch: 	15
+	joint
+	train
+	time: 	34.10515761375427
+	Using ortho loss
+	cross ent: 	2.530572288831075
+	cluster: 	0.6208936794598897
+	separation:	0.3468976491689682
+	avg separation:	0.11393688509861628
+	accu: 		95.92926259592926%
+	orthogonality loss:	11.792876262664794
+	l1: 		120600.0
+	avg l2: 		5.7029315939871594e-05
+	avg l2 with weight: 		4.562345566228032e-05
+	orthogonality loss with weight:	1.1792876262664795
+	max offset: 	2.1483758700924227e-06
+	test
+	time: 	13.987437963485718
+	cross ent: 	2.1024584770202637
+	cluster: 	0.5738475076083479
+	separation:	0.29381363325077914
+	avg separation:	0.020777989114666807
+	accu: 		84.74283741801864%
+	orthogonality loss:	5.639904499053955
+	l1: 		120600.0
+	avg l2: 		9.048471838468686e-05
+	max offset: 	2.243140670543653e-06
+	above 70.00%
+epoch: 	16
+	joint
+	train
+	time: 	34.60702419281006
+	Using ortho loss
+	cross ent: 	2.532538431485494
+	cluster: 	0.6185266661643982
+	separation:	0.3396589426199595
+	avg separation:	0.11313800429304441
+	accu: 		96.22956289622955%
+	orthogonality loss:	10.833481260935466
+	l1: 		120600.0
+	avg l2: 		5.609328582067974e-05
+	avg l2 with weight: 		4.48746322945226e-05
+	orthogonality loss with weight:	1.0833481260935467
+	max offset: 	2.1430926153698238e-06
+	test
+	time: 	14.78462028503418
+	cross ent: 	2.111129949832785
+	cluster: 	0.5703132697220507
+	separation:	0.28689243361867706
+	avg separation:	0.019832878791052718
+	accu: 		84.76009665170866%
+	orthogonality loss:	5.193855285644531
+	l1: 		120600.0
+	avg l2: 		8.805756078800187e-05
+	max offset: 	2.2746323793398915e-06
+	above 70.00%
+epoch: 	17
+	joint
+	train
+	time: 	34.46112012863159
+	Using ortho loss
+	cross ent: 	2.53132621606191
+	cluster: 	0.6166253364086152
+	separation:	0.3320024005572001
+	avg separation:	0.11266775707403819
+	accu: 		96.44644644644644%
+	orthogonality loss:	9.99134189605713
+	l1: 		120600.0
+	avg l2: 		5.620722004096024e-05
+	avg l2 with weight: 		4.496577457757667e-05
+	orthogonality loss with weight:	0.999134189605713
+	max offset: 	2.3778059130563634e-06
+	test
+	time: 	14.440190315246582
+	cross ent: 	2.1098693013191223
+	cluster: 	0.5682650023493273
+	separation:	0.28229155596987954
+	avg separation:	0.01929999785176639
+	accu: 		85.05350362443907%
+	orthogonality loss:	4.797400951385498
+	l1: 		120600.0
+	avg l2: 		8.986029570223764e-05
+	max offset: 	2.2193239601620007e-06
+	above 70.00%
+epoch: 	18
+	joint
+	train
+	time: 	34.091909885406494
+	Using ortho loss
+	cross ent: 	2.5251582066218057
+	cluster: 	0.6148122151692709
+	separation:	0.32522075792153676
+	avg separation:	0.11224664608637491
+	accu: 		96.88021354688021%
+	orthogonality loss:	9.235811080932617
+	l1: 		120600.0
+	avg l2: 		5.602872624876909e-05
+	avg l2 with weight: 		4.482298390939832e-05
+	orthogonality loss with weight:	0.9235811080932617
+	max offset: 	2.354532853132696e-06
+	test
+	time: 	14.517000436782837
+	cross ent: 	2.1150694859438928
+	cluster: 	0.5654009539505531
+	separation:	0.278139632066776
+	avg separation:	0.019141568513265973
+	accu: 		84.96720745598896%
+	orthogonality loss:	4.436254024505615
+	l1: 		120600.0
+	avg l2: 		8.813215390546247e-05
+	max offset: 	2.3338200207945192e-06
+	above 70.00%
+epoch: 	19
+	joint
+	train
+	time: 	34.32545733451843
+	Using ortho loss
+	cross ent: 	2.509359008471171
+	cluster: 	0.6153968723615011
+	separation:	0.3211742134888967
+	avg separation:	0.11217892929911613
+	accu: 		97.36403069736403%
+	orthogonality loss:	8.804156163533529
+	l1: 		120600.0
+	avg l2: 		5.6163680710596964e-05
+	avg l2 with weight: 		4.493094820645638e-05
+	orthogonality loss with weight:	0.880415616353353
+	max offset: 	2.232836777693592e-06
+	test
+	time: 	13.74361801147461
+	cross ent: 	2.1096656137499314
+	cluster: 	0.5654603212044157
+	separation:	0.2756818676817006
+	avg separation:	0.018973838859077156
+	accu: 		85.45046599930963%
+	orthogonality loss:	4.366876125335693
+	l1: 		120600.0
+	avg l2: 		8.901566616259515e-05
+	max offset: 	2.2720946617482696e-06
+	above 70.00%
+epoch: 	20
+	joint
+	train
+	time: 	33.95291018486023
+	Using ortho loss
+	cross ent: 	2.505764865875244
+	cluster: 	0.6151846122741699
+	separation:	0.31861061851183575
+	avg separation:	0.11211219206452369
+	accu: 		97.24724724724724%
+	orthogonality loss:	8.663906656901041
+	l1: 		120600.0
+	avg l2: 		5.6250792113132775e-05
+	avg l2 with weight: 		4.500063732848503e-05
+	orthogonality loss with weight:	0.8663906656901043
+	max offset: 	2.2665342385153053e-06
+	test
+	time: 	14.612499713897705
+	cross ent: 	2.1143979902925163
+	cluster: 	0.5646628793971292
+	separation:	0.27477636368110264
+	avg separation:	0.019358724965874492
+	accu: 		85.24335519502934%
+	orthogonality loss:	4.296533107757568
+	l1: 		120600.0
+	avg l2: 		9.013593808049336e-05
+	max offset: 	2.3166453502199147e-06
+	above 70.00%
+	push
+	Executing push ...
+	push time: 	137.64688730239868
+	test
+	time: 	13.280523538589478
+	cross ent: 	0.8024122596814715
+	cluster: 	0.915610841636
+	separation:	0.9125473571234736
+	avg separation:	0.1953524204677549
+	accu: 		85.34691059716948%
+	orthogonality loss:	91.76918029785156
+	l1: 		120600.0
+	avg l2: 		9.013593808049336e-05
+	max offset: 	2.3166453502199147e-06
+	above 70.00%
+epoch: 	21
+	joint
+	train
+	time: 	34.82680869102478
+	Using ortho loss
+	cross ent: 	0.4619863339265188
+	cluster: 	0.974756973584493
+	separation:	0.9255867266654968
+	avg separation:	0.2824696818987528
+	accu: 		97.76443109776443%
+	orthogonality loss:	180.9688582356771
+	l1: 		120600.0
+	avg l2: 		5.320937270880677e-05
+	avg l2 with weight: 		4.2567498894641176e-05
+	orthogonality loss with weight:	18.09688582356771
+	max offset: 	2.1998519059707178e-06
+	test
+	time: 	13.035289525985718
+	cross ent: 	0.8135821395393076
+	cluster: 	0.9040178153021582
+	separation:	0.8591006727054201
+	avg separation:	0.18052078809203773
+	accu: 		85.34691059716948%
+	orthogonality loss:	89.18903350830078
+	l1: 		120600.0
+	avg l2: 		8.173046808224171e-05
+	max offset: 	2.2096241991675925e-06
+	above 70.00%
+epoch: 	22
+	joint
+	train
+	time: 	34.81771922111511
+	Using ortho loss
+	cross ent: 	0.42002060035864514
+	cluster: 	0.9746613522370656
+	separation:	0.8325481744607289
+	avg separation:	0.2687265062332153
+	accu: 		98.08141474808141%
+	orthogonality loss:	176.23701365152994
+	l1: 		120600.0
+	avg l2: 		5.016358045395464e-05
+	avg l2 with weight: 		4.013086436316371e-05
+	orthogonality loss with weight:	17.623701365152996
+	max offset: 	2.1611040210700594e-06
+	test
+	time: 	14.518332242965698
+	cross ent: 	0.7931096004001026
+	cluster: 	0.899508518391642
+	separation:	0.7347781360149384
+	avg separation:	0.16338591354674306
+	accu: 		85.31239212978944%
+	orthogonality loss:	87.11035919189453
+	l1: 		120600.0
+	avg l2: 		7.885360537329689e-05
+	max offset: 	2.1608202587231062e-06
+	above 70.00%
+epoch: 	23
+	joint
+	train
+	time: 	34.96845841407776
+	Using ortho loss
+	cross ent: 	0.379812508225441
+	cluster: 	0.9740546528498332
+	separation:	0.738941615819931
+	avg separation:	0.2538505176703135
+	accu: 		98.24824824824825%
+	orthogonality loss:	172.4693162027995
+	l1: 		120600.0
+	avg l2: 		5.064896686235443e-05
+	avg l2 with weight: 		4.0519174945075065e-05
+	orthogonality loss with weight:	17.246931620279952
+	max offset: 	2.20236415771069e-06
+	test
+	time: 	13.842203855514526
+	cross ent: 	0.7875195477029373
+	cluster: 	0.8962136548140953
+	separation:	0.6890559052598888
+	avg separation:	0.15333753567317437
+	accu: 		85.19157749395927%
+	orthogonality loss:	85.39600372314453
+	l1: 		120600.0
+	avg l2: 		8.256852015620098e-05
+	max offset: 	2.180050614697393e-06
+	above 70.00%
+epoch: 	24
+	joint
+	train
+	time: 	34.56457495689392
+	Using ortho loss
+	cross ent: 	0.36485645671685535
+	cluster: 	0.9741506751378377
+	separation:	0.7048800388971964
+	avg separation:	0.24787111401557924
+	accu: 		98.3983983983984%
+	orthogonality loss:	170.48329864501954
+	l1: 		120600.0
+	avg l2: 		5.276963929645717e-05
+	avg l2 with weight: 		4.2215709981974214e-05
+	orthogonality loss with weight:	17.048329864501955
+	max offset: 	2.24401901505189e-06
+	test
+	time: 	14.742069482803345
+	cross ent: 	0.7928964678069641
+	cluster: 	0.8940435452707882
+	separation:	0.6770361487207741
+	avg separation:	0.15031585868062644
+	accu: 		85.0707628581291%
+	orthogonality loss:	85.08699798583984
+	l1: 		120600.0
+	avg l2: 		8.516591333318502e-05
+	max offset: 	2.223242745458265e-06
+	above 70.00%
+epoch: 	25
+	joint
+	train
+	time: 	34.45124006271362
+	Using ortho loss
+	cross ent: 	0.3584789190689723
+	cluster: 	0.9739798645178477
+	separation:	0.693665539820989
+	avg separation:	0.24572278887033464
+	accu: 		98.56523189856523%
+	orthogonality loss:	169.8747211710612
+	l1: 		120600.0
+	avg l2: 		5.395058178692125e-05
+	avg l2 with weight: 		4.316046761232428e-05
+	orthogonality loss with weight:	16.98747211710612
+	max offset: 	2.2561800960829714e-06
+	test
+	time: 	13.84831690788269
+	cross ent: 	0.7842591122306627
+	cluster: 	0.894711200533242
+	separation:	0.6656419614265705
+	avg separation:	0.14809055600700707
+	accu: 		85.2088367276493%
+	orthogonality loss:	84.78703308105469
+	l1: 		120600.0
+	avg l2: 		8.633650577394292e-05
+	max offset: 	2.1897981241636444e-06
+	above 70.00%
+epoch: 	26
+	joint
+	train
+	time: 	34.31053614616394
+	Using ortho loss
+	cross ent: 	0.35307804544766747
+	cluster: 	0.9740595742066701
+	separation:	0.685122754573822
+	avg separation:	0.2439170175790787
+	accu: 		98.49849849849849%
+	orthogonality loss:	169.28219319661457
+	l1: 		120600.0
+	avg l2: 		5.492033596965484e-05
+	avg l2 with weight: 		4.39362702309154e-05
+	orthogonality loss with weight:	16.92821931966146
+	max offset: 	2.216683697042754e-06
+	test
+	time: 	14.304281234741211
+	cross ent: 	0.7861363630870293
+	cluster: 	0.8939077689729887
+	separation:	0.666831356698069
+	avg separation:	0.1472031635970905
+	accu: 		85.15705902657922%
+	orthogonality loss:	84.49430084228516
+	l1: 		120600.0
+	avg l2: 		8.741010242374614e-05
+	max offset: 	2.2124568204162642e-06
+	above 70.00%
+epoch: 	27
+	joint
+	train
+	time: 	34.280712366104126
+	Using ortho loss
+	cross ent: 	0.3518522866566976
+	cluster: 	0.9737338531017303
+	separation:	0.6795160055160523
+	avg separation:	0.2425347446401914
+	accu: 		98.53186519853186%
+	orthogonality loss:	168.70290720621745
+	l1: 		120600.0
+	avg l2: 		5.582901940215379e-05
+	avg l2 with weight: 		4.466321843210608e-05
+	orthogonality loss with weight:	16.870290720621746
+	max offset: 	2.1909620500082383e-06
+	test
+	time: 	14.391693592071533
+	cross ent: 	0.7761574156325439
+	cluster: 	0.8948305783600643
+	separation:	0.6476999695958763
+	avg separation:	0.14413384759220585
+	accu: 		85.31239212978944%
+	orthogonality loss:	84.20765686035156
+	l1: 		120600.0
+	avg l2: 		8.904380956664681e-05
+	max offset: 	2.2451677068602294e-06
+	above 70.00%
+epoch: 	28
+	joint
+	train
+	time: 	34.28422975540161
+	Using ortho loss
+	cross ent: 	0.3471340882778168
+	cluster: 	0.9736562303702037
+	separation:	0.6728809555371602
+	avg separation:	0.2411858531832695
+	accu: 		98.43176509843177%
+	orthogonality loss:	168.1350362141927
+	l1: 		120600.0
+	avg l2: 		5.659325324813835e-05
+	avg l2 with weight: 		4.527460259851068e-05
+	orthogonality loss with weight:	16.813503621419272
+	max offset: 	2.231548705822206e-06
+	test
+	time: 	14.89929723739624
+	cross ent: 	0.8035306984494472
+	cluster: 	0.8897643007081131
+	separation:	0.6606901575779093
+	avg separation:	0.14510659231194134
+	accu: 		85.10528132550915%
+	orthogonality loss:	83.92633056640625
+	l1: 		120600.0
+	avg l2: 		9.021848381962627e-05
+	max offset: 	2.292213821419864e-06
+	above 70.00%
+epoch: 	29
+	joint
+	train
+	time: 	34.00022792816162
+	Using ortho loss
+	cross ent: 	0.34175586144129433
+	cluster: 	0.9741922275225321
+	separation:	0.6704315761725108
+	avg separation:	0.24048911104599635
+	accu: 		98.69869869869869%
+	orthogonality loss:	167.79717224121094
+	l1: 		120600.0
+	avg l2: 		5.701354530174285e-05
+	avg l2 with weight: 		4.561083915177733e-05
+	orthogonality loss with weight:	16.779717224121097
+	max offset: 	2.345142547710566e-06
+	test
+	time: 	14.394449472427368
+	cross ent: 	0.779819068980628
+	cluster: 	0.8944138278221262
+	separation:	0.6530799824616005
+	avg separation:	0.14390971023460913
+	accu: 		85.45046599930963%
+	orthogonality loss:	83.87041473388672
+	l1: 		120600.0
+	avg l2: 		8.983368752524257e-05
+	max offset: 	2.1922153337072814e-06
+	above 70.00%
+epoch: 	30
+	joint
+	train
+	time: 	34.16053080558777
+	Using ortho loss
+	cross ent: 	0.34548675219217934
+	cluster: 	0.9736969935894012
+	separation:	0.6688220004240671
+	avg separation:	0.2402639361222585
+	accu: 		98.49849849849849%
+	orthogonality loss:	167.6849742635091
+	l1: 		120600.0
+	avg l2: 		5.721369234379381e-05
+	avg l2 with weight: 		4.577095387503505e-05
+	orthogonality loss with weight:	16.768497426350915
+	max offset: 	2.2940469079912873e-06
+	test
+	time: 	14.789374589920044
+	cross ent: 	0.7701418173724207
+	cluster: 	0.8952635002547297
+	separation:	0.6459831482377546
+	avg separation:	0.14263264577964258
+	accu: 		85.45046599930963%
+	orthogonality loss:	83.81412506103516
+	l1: 		120600.0
+	avg l2: 		9.017678530653939e-05
+	max offset: 	2.246857775389799e-06
+	above 70.00%
+	push
+	Executing push ...
+	push time: 	135.67696380615234
+	test
+	time: 	14.450705766677856
+	cross ent: 	1.2212240428760135
+	cluster: 	0.9307753289568013
+	separation:	0.9730873981426502
+	avg separation:	0.2998391657040037
+	accu: 		84.91542975491888%
+	orthogonality loss:	101.67611694335938
+	l1: 		120600.0
+	avg l2: 		9.017678530653939e-05
+	max offset: 	2.246857775389799e-06
+	above 70.00%

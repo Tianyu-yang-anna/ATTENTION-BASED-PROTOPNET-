@@ -197,6 +197,8 @@ def last_only(model, log=print, last_layer_fixed=True):
         p.requires_grad = False
     for p in model.module.add_on_layers.parameters():
         p.requires_grad = False
+    model.module.query.requires_grad = False
+    model.module.value.requires_grad = False
     model.module.prototype_vectors.requires_grad = False
     for p in model.module.conv_offset.parameters():
         p.requires_grad = False
@@ -211,6 +213,8 @@ def warm_only(model, log=print, last_layer_fixed=True):
         p.requires_grad = False
     for p in model.module.add_on_layers.parameters():
         p.requires_grad = True
+    model.module.query.requires_grad = True
+    model.module.value.requires_grad = True
     model.module.prototype_vectors.requires_grad = True
     for p in model.module.conv_offset.parameters():
         p.requires_grad = False
@@ -224,6 +228,8 @@ def warm_pre_offset(model, log=print, last_layer_fixed=True):
         p.requires_grad = True
     for p in model.module.add_on_layers.parameters():
         p.requires_grad = True
+    model.module.query.requires_grad = True
+    model.module.value.requires_grad = True
     model.module.prototype_vectors.requires_grad = True
     for p in model.module.conv_offset.parameters():
         p.requires_grad = False
@@ -237,6 +243,8 @@ def joint(model, log=print, last_layer_fixed=True):
         p.requires_grad = True
     for p in model.module.add_on_layers.parameters():
         p.requires_grad = True
+    model.module.query.requires_grad = True
+    model.module.value.requires_grad = True
     model.module.prototype_vectors.requires_grad = True
     for p in model.module.conv_offset.parameters():
         p.requires_grad = True

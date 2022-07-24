@@ -73,7 +73,7 @@ elif 'resnet152' in base_architecture:
     prototype_shape = (num_prototypes, 2048, 2, 2)
     add_on_layers_type = 'upsample'
 elif 'resnet50' in base_architecture:
-    prototype_shape = (num_prototypes, 2048, 2, 2)
+    prototype_shape = (num_prototypes, 2048, 1, 1)
     add_on_layers_type = 'upsample'
 elif 'densenet121' in base_architecture:
     prototype_shape = (num_prototypes, 1024, 2, 2)
@@ -188,6 +188,8 @@ if 'resnet152' in base_architecture and 'stanford_dogs' in train_dir:
     joint_optimizer_lrs['features'] = 1e-5
 joint_optimizer_specs = \
 [{'params': ppnet.features.parameters(), 'lr': joint_optimizer_lrs['features'], 'weight_decay': 1e-3}, # bias are now also being regularized
+ {'params': ppnet.query, 'lr': joint_optimizer_lrs['query']},
+ {'params': ppnet.value, 'lr': joint_optimizer_lrs['value']},
  {'params': ppnet.add_on_layers.parameters(), 'lr': joint_optimizer_lrs['add_on_layers'], 'weight_decay': 1e-3},
  {'params': ppnet.prototype_vectors, 'lr': joint_optimizer_lrs['prototype_vectors']},
  {'params': ppnet.conv_offset.parameters(), 'lr': joint_optimizer_lrs['conv_offset']},
@@ -201,6 +203,8 @@ log(str(joint_optimizer_lrs))
 from settings import warm_optimizer_lrs
 warm_optimizer_specs = \
 [{'params': ppnet.add_on_layers.parameters(), 'lr': warm_optimizer_lrs['add_on_layers'], 'weight_decay': 1e-3},
+ {'params': ppnet.query, 'lr': warm_optimizer_lrs['query']},
+ {'params': ppnet.value, 'lr': warm_optimizer_lrs['value']},
  {'params': ppnet.prototype_vectors, 'lr': warm_optimizer_lrs['prototype_vectors']},
 ]
 warm_optimizer = torch.optim.Adam(warm_optimizer_specs)
@@ -212,6 +216,8 @@ if 'resnet152' in base_architecture and 'stanford_dogs' in train_dir:
     warm_pre_offset_optimizer_lrs['features'] = 1e-5
 warm_pre_offset_optimizer_specs = \
 [{'params': ppnet.add_on_layers.parameters(), 'lr': warm_pre_offset_optimizer_lrs['add_on_layers'], 'weight_decay': 1e-3},
+ {'params': ppnet.query, 'lr': warm_pre_offset_optimizer_lrs['query']},
+ {'params': ppnet.value, 'lr': warm_pre_offset_optimizer_lrs['value']},
  {'params': ppnet.prototype_vectors, 'lr': warm_pre_offset_optimizer_lrs['prototype_vectors']},
  {'params': ppnet.features.parameters(), 'lr': warm_pre_offset_optimizer_lrs['features'], 'weight_decay': 1e-3},
 ]
