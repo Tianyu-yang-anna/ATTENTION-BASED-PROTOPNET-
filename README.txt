@@ -3,11 +3,6 @@ described in "Deformable ProtoPNet: An Interpretable Image Classifier Using Defo
 by Jon Donnelly, Alina Jade Barnett, and Chaofan Chen, published in CVPR 2022 and accessible at:
 https://openaccess.thecvf.com/content/CVPR2022/html/Donnelly_Deformable_ProtoPNet_An_Interpretable_Image_Classifier_Using_Deformable_Prototypes_CVPR_2022_paper.html
 
-A trained Deformable ProtoPNet and the auxiliary files needed to perform local and global analysis
-on it can be downloaded from https://duke.box.com/v/deformable-protopnet
-
-A video summary of this paper is available at https://youtu.be/2cgidJJtGU8
-
 This code integrates the publicly available code from (https://github.com/cfchen-duke/ProtoPNet) 
 implementing "This Looks Like That: Deep Learning for Interpretable Image Recognition" and from 
 (https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0) implementing
