@@ -1,12 +1,9 @@
-This code package implements the deformable prototypical part network (Deformable ProtoPNet) model
-described in "Deformable ProtoPNet: An Interpretable Image Classifier Using Deformable Prototypes" 
-by Jon Donnelly, Alina Jade Barnett, and Chaofan Chen, published in CVPR 2022 and accessible at:
-https://openaccess.thecvf.com/content/CVPR2022/html/Donnelly_Deformable_ProtoPNet_An_Interpretable_Image_Classifier_Using_Deformable_Prototypes_CVPR_2022_paper.html
-
+This code package implements the cross attention based prototypical part network (CA ProtoPNet) model
+described in "CA-PROTOPNET: TOWARDS ACCURATE AND INTERPRETABLE IMAGE RECOGNITION WITH CROSS-ATTENTION BASED PROTOPNETs" 
+by Tianyu.
 This code integrates the publicly available code from (https://github.com/cfchen-duke/ProtoPNet) 
 implementing "This Looks Like That: Deep Learning for Interpretable Image Recognition" and from 
-(https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0) implementing
-"Deformable ConvNets v2: More Deformable, Better Results" and "Deformable Convolutional Networks."
+(https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0).
 
 Prerequisites: Python version 3.8.5; PyTorch (version 1.8.1), TorchVision (version 0.9.1), NumPy (version 1.20.2), cv2 (version 4.5.1)
 Recommended hardware: 2  Nvidia A100 SXM4 or 2 NVIDIA Tesla V-100 GPUs
@@ -37,26 +34,5 @@ Instructions for training the model:
 
 Recommended values for all arguments on CUB_200 can be found in run.sh
 
-Instructions for finding the nearest prototypes to a test image:
-1. Run local_analysis.py and supply the following arguments:
--gpuid is the GPU device ID(s) you want to use (optional, default '0')
--modeldir is the directory containing the model you want to analyze
--model is the filename of the saved model you want to analyze
--imgdir is the directory containing the image you want to analyze
--img is the filename of the image you want to analyze
--imgclass is the (0-based) index of the correct class of the image
 
-Instructions for finding the nearest patches to each prototype:
-1. Run global_analysis.py and supply the following arguments:
--gpuid is the GPU device ID(s) you want to use (optional, default '0')
--modeldir is the directory containing the model you want to analyze
--model is the filename of the saved model you want to analyze
 
-Suggested citation: 
-@inproceedings{donnelly2022deformable,
-  title={{Deformable ProtoPNet: An Interpretable Image Classifier Using Deformable Prototypes}},
-  author={Donnelly, Jon and Barnett, Alina Jade and Chen, Chaofan},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages={10265--10275},
-  year={2022}
-}
